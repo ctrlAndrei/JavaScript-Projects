@@ -28,12 +28,14 @@ function showImage(i){
 
 inainte.addEventListener('click',()=>{
     (index<3) ? index++ : index=0;
-    check();
+    showImage(index);
+    activ(document.querySelector("#biluta"+(index+1)));
 })
 
 inapoi.addEventListener('click',()=>{
     (index>0) ? index-- : index=3;
-    check();
+    showImage(index);
+    activ(document.querySelector("#biluta"+(index+1)));
 })
 
 meniuBilute(images.length);
@@ -49,7 +51,8 @@ function meniuBilute(l){
 
             (index > 0) ? index-- : index=3;
             index = i;
-            check();
+            showImage(index);
+            activ(document.querySelector("#biluta"+(index+1)));
         })
         meniu.appendChild(biluta);
     }
@@ -62,11 +65,4 @@ function activ(bil){
     for (var i =0 ; i<list.length;i++){
         (list[i].id!==bil.id) ? list[i].className="biluta" : list[i].className="biluta activ";
     }
-}
-
-function check(){
-    showImage(index);
-    // (index===0)?inapoi.hidden=true:inapoi.hidden=false;
-    // (index===3)?inainte.hidden=true:inainte.hidden=false;
-    activ(document.querySelector("#biluta"+(index+1)));
 }
