@@ -26,10 +26,10 @@ function addElement(){
         delElement(li);
     })
     edit.innerText = "edit";
-    submit.innerText="submit";
+    submit.innerText = "submit";
     edit.addEventListener('click',function(){
-        submit.hidden=true;
-        span.innerHTML='<input value="'+span.innerText+'">';
+        submit.hidden = true;
+        span.innerHTML = '<input value="'+span.innerText+'">';
         span.addEventListener('keypress',function(ev){
             if (ev.key==="Enter"){
                 span.innerHTML=span.children[0].value;
@@ -38,14 +38,29 @@ function addElement(){
         })
     })
     submit.addEventListener('click',function(){
-        li.innerHTML=li.children[0].innerText;
-        final.appendChild(li);
+        for(let i = 0 ; i < 3; i++){
+            li.removeChild(li.firstChild.nextSibling);
+        }
+        li.classList.add('fin');
+        fin.appendChild(li);
+        let list = Array.from(document.getElementsByClassName('fin'));
+        list.sort((a,b)=>{
+            if (a.innerText > b.innerText){return 1};
+            if (a.innerText < b.innerText){return -1};
+            if (a.innerText === b.innerText){return 0}
+        });
+       
+        list.forEach((el)=>{
+            fin.appendChild(el);
+        })
     })
     li.appendChild(span);
     li.appendChild(del);
     li.appendChild(edit);
     li.appendChild(submit);
     pater.appendChild(li);
+
+    input.value = '';
 }
 
 function delElement(d){
