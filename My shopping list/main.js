@@ -5,7 +5,7 @@ const fin = document.getElementById('final');
 
 add.addEventListener('click',addElement);
 input.addEventListener('keypress',function(ev){
-        if (ev.key==="Enter"){
+        if (ev.key === "Enter"){
         addElement();
         }
 })
@@ -17,7 +17,7 @@ function addElement(){
     var submit = document.createElement('button');
     var span = document.createElement('span');
 
-    if (input.value===""){
+    if (input.value === ""){
         return;
     }
     span.innerText = input.value;
@@ -31,7 +31,7 @@ function addElement(){
         submit.hidden = true;
         span.innerHTML = '<input value="'+span.innerText+'">';
         span.addEventListener('keypress',function(ev){
-            if (ev.key==="Enter"){
+            if (ev.key === "Enter"){
                 span.innerHTML=span.children[0].value;
                 submit.hidden=false;
             }
