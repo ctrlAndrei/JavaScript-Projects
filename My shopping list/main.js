@@ -38,16 +38,14 @@ function addElement(){
         })
     })
     submit.addEventListener('click',function(){
-        for(let i = 0 ; i < 3; i++){
-            li.removeChild(li.firstChild.nextSibling);
-        }
+        li.innerHTML = li.firstChild.innerText;
         li.classList.add('fin');
         fin.appendChild(li);
         let list = Array.from(document.getElementsByClassName('fin'));
         list.sort((a,b)=>{
             if (a.innerText > b.innerText){return 1};
             if (a.innerText < b.innerText){return -1};
-            if (a.innerText === b.innerText){return 0}
+            if (a.innerText === b.innerText){return 0};
         });
        
         list.forEach((el)=>{
