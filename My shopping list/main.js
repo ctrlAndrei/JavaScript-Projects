@@ -17,16 +17,21 @@ function addElement(){
     var submit = document.createElement('button');
     var span = document.createElement('span');
 
+    li.classList.add("mb-3");
     if (input.value === ""){
         return;
     }
     span.innerText = input.value;
+    span.classList.add("mr-3");
+    del.classList.add("mr-1");
     del.innerText = 'delete';
     del.addEventListener('click',function(){
         delElement(li);
     })
     edit.innerText = "edit";
+    edit.classList.add("mr-1");
     submit.innerText = "submit";
+    submit.classList.add("mr-1");
     edit.addEventListener('click',function(){
         submit.hidden = true;
         span.innerHTML = '<input value="'+span.innerText+'">';
@@ -39,7 +44,7 @@ function addElement(){
     })
     submit.addEventListener('click',function(){
         li.innerHTML = li.firstChild.innerText;
-        li.classList.add('fin');
+        li.className = "fin";
         fin.appendChild(li);
         let list = Array.from(document.getElementsByClassName('fin'));
         list.sort((a,b)=>{
