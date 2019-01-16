@@ -1,13 +1,9 @@
 const first = document.querySelector('#first');
 const second = document.querySelector('#second');
 
-for (let i = 0; i < 10; i++){
-    (i < 5)? generateImage(first) : generateImage(second);
+for (let i = 0; i < 11; i++){
+    (i < 6)? generateImage(first) : generateImage(second);
 }
-
-// for (let i = 0 ; i < 5 ; i++){
-//      generateImage(second);
-// }
 
 function generateImage(parent){
     fetch('https://randomuser.me/api/')
