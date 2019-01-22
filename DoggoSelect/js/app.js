@@ -8,6 +8,8 @@
 // ------------------------------------------
 //  Referinte la Elementele HTML pe care le vom folosi in cod
 // ------------------------------------------
+const name = document.getElementById('name');
+const comment = document.getElementById('comment');
 
 const select = document.getElementById('breeds');
 const card = document.querySelector('.card'); 
@@ -96,12 +98,18 @@ card.addEventListener('click',()=>{
 //  POST DATA
 // ------------------------------------------
 
-form.action = 'https://jsonplaceholder.typicode.com/posts';
-form.method = 'POST';
+// form.action = 'https://jsonplaceholder.typicode.com/posts';
+// form.method = 'POST';
+
 // PAS 9 - Transmiteti datele completate in formular printr-un request POST, catre https://jsonplaceholder.typicode.com/posts 
 // Printati in consola raspunsul primit de la server, impreuna cu un mesaj custom.  
 
-
+submit.addEventListener('click',(ev)=>{
+    ev.preventDefault();
+    fetch('https://jsonplaceholder.typicode.com/posts',{method: 'POST',
+     body: JSON.stringify({name: name.value,comment: comment.value})})
+    .then(data => console.log(data))
+})
 // ------------------------------------------
 //  HELPER FUNCTIONS
 // ------------------------------------------
