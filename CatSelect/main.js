@@ -27,7 +27,7 @@ img.addEventListener('click',()=>changeImage());
 select.addEventListener('change',()=>changeImage());
 
 function changeImage(){
-    fetch('https://api.thecatapi.com/v1/images/search?breed_id='+select.options[select.selectedIndex].id,{headers:{"x-api-key":"8591a1f5-4714-4357-bff7-25f82e06dab8"}})
+    fetch('https://api.thecatapi.com/v1/images/search?breed_id='+ select.options[select.selectedIndex].id,{headers:{"x-api-key":"8591a1f5-4714-4357-bff7-25f82e06dab8"}})
     .then(res=>res.json())
     .then(data=>{
         img.src=data[0].url;
@@ -54,7 +54,7 @@ fetch('https://api.thecatapi.com/v1/categories')
     categories.forEach(el=>{
         el.addEventListener('click',()=>{
             for(let i = 0; i < 3; i++){
-            fetch('https://api.thecatapi.com/v1/images/search?category_ids='+el.id,{headers:{"x-api-key":"8591a1f5-4714-4357-bff7-25f82e06dab8"}})
+            fetch('https://api.thecatapi.com/v1/images/search?category_ids=' + el.id,{headers:{"x-api-key":"8591a1f5-4714-4357-bff7-25f82e06dab8"}})
             .then(res=>res.json())
             .then(data=>{
                 console.log(data);
