@@ -1,7 +1,7 @@
 # Projects for JavaScript Course 2018
 [Step IT Academy, Bucharest](https://itstep.ro/)
 
-Trainer: @Dragos Dehelean
+Trainer: Dragos Dehelean
 
 * [Slideshow-start](https://ctrlandrei.github.io/JavaScript-Projects/slideshow_start/)
 
@@ -9,4 +9,4 @@ Trainer: @Dragos Dehelean
 
 * [Doggo Select](https://ctrlandrei.github.io/JavaScript-Projects/DoggoSelect/index.html)
 
-* [Authors(using fetch)](https://ctrlandrei.github.io/JavaScript-Projects/Authors/index.html)
+* [Cat Select](https://ctrlandrei.github.io/JavaScript-Projects/CatSelect/CatSelect.html)
