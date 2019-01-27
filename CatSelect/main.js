@@ -58,6 +58,16 @@ fetch('https://api.thecatapi.com/v1/categories')
             // categories.push(button);
         })})
 
+        gif.addEventListener('click',()=>{
+            for(let i = 0; i < 6; i++){
+                fetch('https://api.thecatapi.com/v1/images/search?mime_types=gif',configFetch)
+                .then(res=>res.json())
+                .then(data=>{
+                    console.log(data);
+                    images[i].src=data[0].url;
+                })
+             }
+        })
 //         console.log(categories);
 //         categories.forEach(el=>{
         //     el.addEventListener('click',()=>{
