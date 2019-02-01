@@ -10,3 +10,5 @@ Trainer: Dragos Dehelean
 * [Doggo Select](https://ctrlandrei.github.io/JavaScript-Projects/DoggoSelect/index.html)
 
 * [Cat Select](https://ctrlandrei.github.io/JavaScript-Projects/CatSelect/CatSelect.html)
+
+* [Snake](https://ctrlandrei.github.io/JavaScript-Projects/Snake/Snake.html)
