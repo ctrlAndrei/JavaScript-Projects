@@ -13,10 +13,10 @@ let snake = {
     y:15,
     pastX:0,
     pastY:0,
-    up:()=>{snake.y-=2},
-    down:()=>{snake.y+=2},
-    right:()=>{snake.x+=2},
-    left:()=>{snake.x-=2},
+    up:()=>{snake.y-=4},
+    down:()=>{snake.y+=4},
+    right:()=>{snake.x+=4},
+    left:()=>{snake.x-=4},
     direction:(str)=>{snake[str]()}
 }
 
@@ -33,6 +33,10 @@ let food = {
 }
 
 function draw(){
+    tail.forEach(el=>{
+        if (el.x === snake.x && el.y === snake.y)
+        {alert('Game over'); return}
+    })
     let x = snake.x;
     let y = snake.y;
     snake.pastX = x;
@@ -62,7 +66,7 @@ function draw(){
     ctx.fillRect(snake.x,snake.y,15,15);
     ctx.fillStyle = 'red';
     ctx.fillRect(food.x,food.y,15,15);
-    if (snake.x === canvas.width - 15 || snake.y === canvas.height-15 || snake.x < 0 || snake.y < 0)
+    if (snake.x > canvas.width - 15 || snake.y > canvas.height-15 || snake.x < 0 || snake.y < 0)
     {alert('Game over'); return;}
     if (Math.abs(snake.x - food.x) <= 13 && Math.abs(snake.y - food.y) <= 13){
         score++;
